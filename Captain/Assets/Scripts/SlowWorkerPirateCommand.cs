@@ -12,52 +12,58 @@ namespace Captain.Command
         private float TotalWorkDone;    // how much time worked (compare with 20 - 40) - real
         private float CurrentWork;      // within the 8 seconds cycle, how much time spent (should produce 1 item or not)
         private const float PRODUCTION_TIME = 8.0f; // produce 1 item each 8 seconds
-        private bool Exhausted = false;
-
+        
 
         public void OnEnable()
         {
+            // initialize TotalWorkDuration
             this.TotalWorkDuration = Random.value * 20.0f + 20.0f;
-            //Debug.Log(this.TotalWorkDuration);
         }
 
         public SlowWorkerPirateCommand()
         {
+            // initialize
             this.TotalWorkDone = 0.0f;
             this.CurrentWork = 0.0f;
-            //this.OnEnable();
         }
 
         public bool Execute(GameObject pirate, Object productPrefab)
         {
+            // Update TotalWorkDone and CurrentWork each frame
             this.TotalWorkDone += Time.deltaTime;
             this.CurrentWork += Time.deltaTime;
-            //Debug.Log(TotalWorkDuration);
+            
             //This function returns false when no work is done. 
             //After you implement work according to the specification and
             //generate instances of productPrefab, this function should return true.
+            
+            // Already worked for the assigned amount of time
             if (this.TotalWorkDuration <= this.TotalWorkDone)
             {
                 return false;
             } 
             else
             {
+                // only when after each PRODUCTION_TIME duration, the new gameObject is instantiated
                 if (this.CurrentWork >= PRODUCTION_TIME)
                 {
+                    // instantiate the prefab
                     var mushroom = (GameObject)Instantiate(productPrefab, pirate.transform.localPosition, pirate.transform.rotation);
+                    
+                    // set Rigidbody2D values
                     var mushroomRigidBody = mushroom.GetComponent<Rigidbody2D>();
-                    mushroomRigidBody.velocity = mushroom.transform.forward * 50f;
-                    mushroomRigidBody.AddForce(new Vector2(Random.value, Random.value) * 260.0f);
-                    mushroom.transform.position = new Vector2(pirate.transform.position.x, pirate.transform.position.y);
-                    this.CurrentWork = 0.0f;
+                    mushroomRigidBody.velocity = mushroom.transform.forward * 50f;  // throw speed
+                    mushroomRigidBody.AddForce(new Vector2(Random.value, Random.value) * 260.0f);   // force to throw out the prefab
+                    mushroom.transform.position = new Vector2(pirate.transform.position.x, pirate.transform.position.y);    // start position of the throw
+                    this.CurrentWork = 0.0f;    // after a prefab is made, CurrentWork is reset to 0 (start a new cycle)
                     return true;
                 }
                 else 
                 {
+                    // when a single production cycle has not finished yet
                     return true;
                 }
             }
-            
         }
     }
 }

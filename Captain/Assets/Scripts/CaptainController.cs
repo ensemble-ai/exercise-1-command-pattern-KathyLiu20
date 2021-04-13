@@ -20,7 +20,7 @@ public class CaptainController : MonoBehaviour
     {
         this.gameObject.AddComponent<CaptainMotivateCommand>();
         this.Fire1 = this.gameObject.GetComponent<CaptainMotivateCommand>();
-        this.Fire2 = ScriptableObject.CreateInstance<DoNothing>();
+        this.Fire2 = ScriptableObject.CreateInstance<JumpCommand>();
         this.Right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.Left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
         this.Booty.text = "Booty";
@@ -68,6 +68,11 @@ public class CaptainController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             this.Gems++;
+        }
+        else if(collision.gameObject.tag == "Enemy")
+        {
+            // everytime when hit by an enemy, you will lose 1 coin == a mushroom
+            this.Mushrooms--;
         }
     }
 }

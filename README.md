@@ -54,5 +54,14 @@ Make your own `ICaptainCommand` bound to the Captain's "Fire2" input that intera
 
 
 
+------
+
 #### Stage 4 documentation:
 
+In stage 4, I would like to add a `ICaptainCommand` to the Captain's "Fire2" to let the Captain **jump** while running. When the player right-click on the mouse, the captain will jump. See `JumpCommand.cs` for more details.
+
+To make the jump more meaningful and the whole game more interesting, I added some components in the game scene. **There are 3 enemies in all of the 3 backgrounds who are running at a pseudo-randomly determined speed back and forth. The player need to control the Captain to jump over the enemies so that he would not be hit by the them and lose a coin.**
+
+To implement these features, I used one of the new characters provided in the Assets, and chose to use "ENEMY 2". I cut the animation to only let the enemy walk and run. Then, in the script `EnemyIdling.cs`, I enabled the enemy to walk around by setting the limit of its x-axis value. Even more interesting, I used the similar technique as stage 3 to generate a pseudo-random integer and determine the speed of the enemy. I believe this can make more variations and result in a better gameplay experience. 
+
+The enemy will steal a coin from you every time you met it, so the player should use "jump" to avoid collisions. This is implemented similar to collecting the Prefabs in `CaptainController.cs`.
