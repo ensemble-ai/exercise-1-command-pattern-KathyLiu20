@@ -27,10 +27,8 @@ namespace Captain.Command
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
             // just jump straight up
-            if (rb != null) {
-                rb.velocity = new Vector2(rb.velocity.x, 22.0f);
-                // rb.velocity = Vector2.up * 25f;  // similar way - jumping up
-            }
+            rb.velocity = new Vector2(rb.velocity.x, 22.0f);
+
         }
     }
 }

@@ -26,8 +26,8 @@ public class PirateController : MonoBehaviour
     //Has received motivation. A likely source is from on of the Captain's morale inducements.
     public void Motivate()
     {
-        int randomWork = Random.Range(1,4); // generate a random integer 1, 2, or 3
-        // print(randomWork); // debug checking
+        // generate a random integer 1, 2, or 3
+        int randomWork = Random.Range(1,4);
         
         if (randomWork == 1)
         {
@@ -37,7 +37,7 @@ public class PirateController : MonoBehaviour
         {
             this.ActiveCommand = Object.Instantiate(ScriptableObject.CreateInstance<NormalWorkerPirateCommand>());
         }
-        else
+        else if (randomWork == 3)
         {
             this.ActiveCommand = Object.Instantiate(ScriptableObject.CreateInstance<FastWorkerPirateCommand>());
         }

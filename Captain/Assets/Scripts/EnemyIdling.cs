@@ -47,9 +47,7 @@ public class EnemyIdling : MonoBehaviour
         positionX = transform.position.x;
         positionY = transform.position.y;
         // go to left first
-        if (rb!=null) {
-            rb.velocity = new Vector2(-this.Speed, rb.velocity.y);
-        }
+        rb.velocity = new Vector2(-this.Speed, rb.velocity.y);
         GetComponent<SpriteRenderer>().flipX = true;
         isLeft = true;
     }
