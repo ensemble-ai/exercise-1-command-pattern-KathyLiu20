@@ -111,7 +111,7 @@ The programmer actually follows the correct style we should have which is great.
 #### Style Guide Infractions ####
 From my point of view, everything about style is good.
 #### Style Guide Exemplars ####
-The programmer follows the correct coding style and also provides comments which makes the reviewers understand what does the code do.
+The programmer follows the correct coding style and also provides comments which makes the reviewers understand what does the code do. You strictly follow the .Net code style.
 ## Best Practices ##
 The best attempt in this exercise is the idea of making an enemy to push the captain to jump or the captain will lose points. I think this is more likely a
 real world game.
