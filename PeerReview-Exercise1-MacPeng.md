@@ -111,7 +111,7 @@ The programmer actually follows the correct style we should have which is great.
 #### Style Guide Infractions ####
 From my point of view, everything about style is good.
 #### Style Guide Exemplars ####
-The programmer follows the correct coding style and also provides comments which makes the reviewers understand what does the code do. You strictly follow the .Net code style.
+The programmer follows the correct coding style and also provides comments which makes the reviewers understand what does the code do. And you separate the comments into multiple lines instead of putting then together. Thus, you strictly follow the .Net code style.
 ## Best Practices ##
 The best attempt in this exercise is the idea of making an enemy to push the captain to jump or the captain will lose points. I think this is more likely a
 real world game.
@@ -130,5 +130,4 @@ This should be similar to the Code Style justification.
 #### Best Practices Infractions ####
 There is only one tiny error that in the fast worker script. However, it's only a wrong float value and does not impact the usability of the code.
 #### Best Practices Exemplars ####
-I really like how stage 4 was implemented. The programmer made the captain character jump to avoid losing score by colliding with the enemy. This idea is more interesting
-compare to only make it jump. So in my opinion, this work is terrific.
+I really like how stage 4 was implemented. The programmer made the captain character jump to avoid losing score by colliding with the enemy. This idea is more interesting compare to only make it jump. So in my opinion, this part is terrific.
