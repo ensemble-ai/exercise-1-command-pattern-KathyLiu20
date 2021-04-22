@@ -87,7 +87,7 @@ Hitting the motivate command makes pirates produce objects at varying speeds as 
 - [ ] Unsatisfactory
 
 #### Justifaction ##### 
-Captain jumps when the Fire2 button is clicked, which is the intended added functionality.
+Captain jumps when the Fire2 button is clicked, which is the intended added functionality. The addition of enemies and inventory mechanincs was awesome and the icing on the cake.
 
 ## Code Style ##
 
